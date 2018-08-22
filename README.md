@@ -60,8 +60,15 @@ Ensure QUEUE_DRIVER=sync
 ```
 php artisan key:generate
 ```
-#### Running the project,
+#### Running the project
+- Open app.php in the config directory.
+- Under Application Service Providers..., look for this line
 ```
-Run php artisan twitter:stream on your terminal.
+//App\Providers\GoogleSheetServiceProvider::class,
+```
+- Uncomment it and save the app.php file
+- On your terminal, run
+```
+php artisan twitter:stream 
 At the prompt, type in an hashtag and press enter
 ```
