@@ -32,7 +32,10 @@ class HandleTweet implements ShouldQueue
     {
         $tweet = $this->tweet;
         if($tweet['user']['followers_count']>1000 && $tweet['user']['followers_count'] < 5000){
-            
+                config('app.listFeed')->insert([
+                    'profilename' => $tweet['user']['screen_name'],
+                    'totalfollowers' => $tweet['user']['followers_count'],
+                ]);
                 echo '-------------------------------------------------------'. PHP_EOL;
                 echo 'Profile Name: '.$tweet['user']['screen_name'].' No of followers: '.$tweet['user']['followers_count'] . PHP_EOL;  
                 echo '-------------------------------------------------------'. PHP_EOL;  
