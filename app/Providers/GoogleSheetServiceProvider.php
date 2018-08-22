@@ -16,7 +16,6 @@ class GoogleSheetServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path(). '/'.env('GOOGLE_APPLICATION_CREDENTIALS'));
         $client = new Google_Client;
         $client->useApplicationDefaultCredentials();
 
